@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!--google version of api, use jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+
+    
+
+    <script> 
+        $(document).ready(function(){ 
+            $(function(){
+                $("#footer").load("footer.html"); 
+                $("#header").load("header.html"); 
+            });
+        })
+    </script>
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    .banner-1{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            top: 0px;
+            padding: 0;
+            margin: 0;
+            background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url(Images/panorama-2117310.jpg);
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: top center;
+            background-repeat:  no-repeat;
+            background-attachment: fixed;
+            overflow: hidden;
+            text-align: center;
+    }
+    #form{
+        background-color: #000;
+        height: 80%;
+        width: 90%;
+        margin: 0;
+        opacity: .9;
+        border:2px solid red;
+    }
+
+#submit-btn{
+    background: transparent;
+    color:#fff;
+    width: 90%;
+    border:1px solid red;
+    outline:none;
+    padding:10px;
+    font-size: 20px;
+}
+#submit-btn:hover{
+    transform: scale(1.2);
+}
+
+
+.fa{
+    display:inline-block;
+    color:red;
+    border-right:1px solid #fff;
+    padding:8px;
+    margin-left: 8px;
+}
+
+.banner-2
+{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: 0px;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url(Images/panorama-2117310.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: top center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+
+
+    </style>
+
+    <script>
+        var x = document.getElementById("selection-plane-type");
+        var i = x.selectedIndex;
+        var y = x.options[i].text;
+    </script>
+    
+</head>
+<body>
+    <div id = "header"></div>
+
+    <section class="banner-1 d-flex justify-content-center d-flex align-items-center">
+        <div class="container">
+            
+            <form class="d-flex justify-content-center d-flex align-items-center">
+                <div id = "form">
+                    <h1 class="text-white text-center">Search For a Hotel</h1>
+                    
+                    <div class="form-row d-flex justify-content-center d-flex align-items-center">
+                        
+                        <div class="form-group col-md-5 m-4">
+                            <label for="arrival" style="color: white !important;">Date of Arrival</label>
+                            <input type="date" class="form-control" id="arrival" placeholder="Date of Arrival">
+                            
+                        </div>
+
+                        <div class="form-group col-md-5 m-4">
+                            <label for="depart" style="color: white !important;">Date of Departure</label>
+                            <input type="date" class="form-control" id="depart"  placeholder="Date of Departure">
+                        </div>
+                    </div>
+                    <div class="form-row d-flex justify-content-center d-flex align-items-center">
+                        <div class="form-group col-md-5 m-4">
+                            <label style="color: white !important;">Number of Beds</label>
+                            <input type="number" class="form-control" id="" placeholder="Number of Rooms">
+                          </div>
+                          <div class="form-group col-md-5 m-4">
+                            <label  style="color: white !important;">City of Hotel</label>
+                            <input type="text" class="form-control" id="" placeholder="City Name">
+                          </div>
+                    </div>
+                    <div class="form-row d-flex justify-content-center d-flex align-items-center">
+                        <div class="form-group col-md-5 m-4">
+                            <label style="color: white !important;">Lowest Hotel Cost</label>
+                            <input type="number" class="form-control" id="" placeholder="Lowest Cost For Hotel">
+                          </div>
+                          <div class="form-group col-md-5 m-4">
+                            <label style="color: white !important;">Highest Hotel Cost</label>
+                            <input type="number" class="form-control" id="" placeholder="Highest Cost For Hotel">
+                          </div>
+                    </div>
+                    <br>
+
+    
+                    
+    
+                </div>
+            </form>
+            <button type="submit" value="Submit" id="submit-btn">Book Now</button>
+        </div>
+    </section>
+
+
+    <section class="banner-1 d-flex justify-content-center d-flex align-items-center">
+
+    </section>
+
+
+    <div id = "footer"></div>
+</body>
+</html>

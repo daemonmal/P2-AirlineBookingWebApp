@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cab And Car</title>
+
+    <!--google version of api, use jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <link rel="stylesheet" href="TicketAndLocalBooking.css"/>
+
+    <script> 
+        $(document).ready(function(){ 
+            $(function(){
+                $("#footer").load("footer.html"); 
+                $("#header").load("header.html"); 
+            });
+        })
+    </script>
+
+
+  <script>
+      var x = document.getElementById("selection-plane-type");
+      var i = x.selectedIndex;
+      var y = x.options[i].text;
+  </script>
+  
+</head>
+<body>
+  <div id = "header"></div>
+
+  <div style="height: 10%;">
+  
+  </div>
+
+  <section class="banner-1">
+      <section class="container-md container-fluid" id="container1">
+          <div class="home">
+            <h1>Transportation at Location</h1>
+            <p class = "subtextHome">Rentals, Taxis, and Public Transportation for Easy Travels</p>
+      
+            <div class="d-flex justify-content-center">
+              <div class="card m-3 p-2">
+                <img class="card-img-top" src="Images/bag-shopping-solid.svg" alt="Card image cap">
+              <br>
+                <span class="card-font"> CHECKOUT DATE </span>
+                <input type="datetime-local" class="card-font" placeholder="MM/DD/YYYY">
+              </div>
+
+              <div class="card m-3 p-2">
+              <img class="card-img-top" src="Images/arrow-rotate-left-solid.svg" alt="Card image cap">
+                <br>
+                <span class="card-font">RETURN DATE</span> 
+                <input class="card-font" type="datetime-local" placeholder="MM/DD/YYYY">
+              </div>
+
+              <div class="card m-3 p-2 ">
+              <img class="card-img-top" src="Images/city-solid.svg" alt="Card image cap">
+                <br>
+                <span class="card-font">CITY TO RENT FROM</span> 
+                <input class="card-font" type="text" placeholder="New York">
+              </div>
+
+              <div class="card m-3 p-2">
+                  <img class="card-img-top" src="Images/train-subway-solid.svg" alt="Card image cap">
+                  <br>
+                  <span class="card-font">PICKUP LOCATION</span> 
+                  <input class="card-font" type="number" name="quantity" min="1" placeholder="1">
+                </div>
+
+              <div class="card m-3 p-2">
+                  <img class="card-img-top" src="Images/check-double-solid.svg" alt="Card image cap">
+                  <br>
+                  <span class="card-font">TYPE OF TRANSPORTATION</span> 
+                  <select class="card-font form-select" id = "selection-plane-type" title="plane-type">
+                      <option class="card-font" value = "economy">Rental Car</option>
+                      <option class="card-font" value = "business">Cab</option>
+                      <option class="card-font" value = "firstClass">Public Transportation</option>
+                  </select>
+                </div>
+
+              <div class="card m-3 p-2 justify-content-center">
+                <button class="" type="button" onclick=""
+                data-toggle="collapse" data-target="#part-2-collapse" aria-expanded="false" aria-controls="part-2-collapse">
+                  <span class="card-font btn button-style" style="overflow-wrap: break-word;"> 
+                    <h4 >Search For Transportation</h4>
+                    <i class="fas fa-arrow-circle-right"></i>
+                  </span>
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </section>
+  </section>
+
+  <section class = "part-2 collapse" id = "part-2-collapse">
+    <div>
+        something
+    </div>
+</section>
+
+
+  <div id = "footer"></div>
+</body>
+</html>

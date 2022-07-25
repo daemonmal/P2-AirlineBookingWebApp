@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Account</title>
+ 
+    <!--personal-->
+    <link rel="stylesheet" href = "CreateAccount.css">
+    <!--fntawesome-->
+    <script src="https://kit.fontawesome.com/b84ca7d489.js" crossorigin="anonymous"></script>
+
+    <!--google version of api, use jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+ 
+    <script> 
+        $(document).ready(function(){ 
+            $(function(){
+                $("#footer").load("footer.html"); 
+                $("#header").load("header.html"); 
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="header"></div>
+
+    <section class = "banner-1">
+        <div style="height: 15%;"></div>
+            <section class = "form-group ">
+                <div class = "container-sm mx-auto my-auto" style="width: 70%;">
+                    <div class = "row no-gutters">
+                        <div class = "col-lg-5">
+                            <img src="Images/aurora-1197753.jpg" class="img-fluid img-rounded" style="height: 100%;" alt=""></img>
+                        </div>
+                        <div class = "col-lg-7 px-5 pt-1">
+                            <h1 class="font-weight-bold py-3">TravelMore</h1>
+                            <h4>Register a New Account</h4>
+                            <form>
+    
+                                <div class="form-row">
+                                    <div class="col-lg-7">
+                                        <input type="email" placeholder="Email-Address" class="form-control my-3 p-4"></input>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-lg-7">
+                                        <input type="text" placeholder="userName" class="form-control my-3 p-4"></input>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-lg-7">
+                                        <input type="password" placeholder="password" class="form-control my-3 p-4"></input>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-lg-7">
+                                        <input type="password" placeholder="re-enter password" class="form-control my-3 p-4"></input>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-lg-7">
+                                        <button class="btn1 mt-3 mb-4" type="submit">Login</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <p class="col-lg-7">
+                                        <a href = "#">Need Help?</a>
+                                    </p>
+                                </div>
+
+                                <div class="form-row" >
+                                    <p class="col-lg-7"><p class="col-lg-7">Create Account With
+                                        <a class="btn btn-outline-dark  btn-floating m-1" href="#!" role="button">
+                                            <i class="fa-brands fa-facebook"></i></a>
+                                        <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
+                                            <i class="fa-brands fa-google"></i></a>
+                                        <a class="btn btn-outline-dark  btn-floating m-1" href="#!" role="button">
+                                            <i class="fa-brands fa-windows"></i></a>
+                                    </p></p>
+                                </div>
+
+                                <br>
+    
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>      
+    </section>
+
+    
+</body>
+</html>

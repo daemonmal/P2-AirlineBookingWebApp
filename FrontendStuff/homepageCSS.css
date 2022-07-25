@@ -1,0 +1,154 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*body*/
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.spacing
+{
+    margin-left: 7%;
+}
+/*this is for the dropdown stuff*/
+
+
+.banner-2{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: 0px;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url(Images/panorama-2117310.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: top center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+
+    color: white;
+}
+
+.banner-1
+{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: 0px;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ),url(Images/winding-road-1556177.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: top center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    z-index: 5;
+    overflow: hidden;
+
+    color: white;
+}
+
+.banner-3
+{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: 0px;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ),url(Images/night-4694750.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: top center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    z-index: 5;
+    overflow: hidden;
+
+    color: white;
+}
+
+/*swiper*/
+.swiper {
+    height: 80vh;
+    width: 87%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px; 
+}
+
+.sizeImage
+{
+    height: 100vh;
+    width: 100%;
+}
+
+.introText
+{
+    text-align: center;
+    font-size: 5vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(238, 232, 232);
+}
+
+.swiper-information
+{
+    height: 35vh;
+    width: 50%;
+    top: 5%;
+    left: 4%;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    margin: 0;
+    z-index: 2;
+    position: absolute;
+    border-radius: 20px;
+    padding: 3%;
+}
+
+.body-column1{
+    height: 100vh;
+}
+/*body*/
+
+/*buttons*/
+.learn-more-button
+{
+    position: absolute;
+    top: 75%;
+    left: 75%;
+    padding: none;
+    background-color: rgb(33, 32, 32, .2);
+    width: auto;
+    height: auto;
+    z-index: 4;
+    border-radius: 5px;
+}
+
+
+.border-box-button-intro{
+    background-color: none;
+    color: rgb(237, 237, 233);
+
+}
+
+.start-your-adventure-button
+{
+    position: absolute;
+    top: 60%;
+    left: 35%;
+    
+    padding: none;
+    background-color: rgb(33, 32, 32, .3);
+    width: auto;
+    height: auto;
+    z-index: 4;
+    border-radius: 5px;
+}

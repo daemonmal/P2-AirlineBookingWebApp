@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="James Gui">
+    <meta name="description" content="A basic homepage written by James Gui">
+    
+    <!--google version of api, use jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+
+    <!--swiper-->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="homepageCSS.css"/>
+    <!--note i will move all this to css later-->
+
+    <script> 
+      $(document).ready(function(){ 
+          $(function(){
+              $("#footer").load("footer.html"); 
+              $("#header").load("header.html"); 
+          });
+
+          /*TODO modify this 
+          let called = false;
+          document.addEventListener('scroll', e => {
+          if (document.documentElement.scrollTop >= 500) {
+            if (called) return
+            called = true
+            calledEvent()
+          }
+        })
+
+        function calledEvent() {
+          console.log('hello')
+        }to react*/
+      })
+    </script>
+
+    <style>
+      
+      .description-container
+      {
+        position: absolute;
+        display: flex;
+        height: 58vh;
+        width: 100%;
+        bottom: 0px;
+        background-color: rgb(0, 0, 0, .6);
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+      }
+
+      .title-section-2
+      {
+        position: relative;
+        display: block;
+        height: 16vh;
+        width: 100%;
+        top: 0;
+        background-color: rgb(0, 0, 0, .8);
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+      }
+
+      .title-section-2 > h1{
+        position: absolute;
+        left: 25%;
+        right: 25%;
+        bottom: 0%;
+        font-size: 400%;
+        font-family: "Sofia", sans-serif;
+        
+        overflow: hidden;
+        color: rgba(255, 255, 255, 1);
+      }
+
+      .card{
+        width: 15%;
+        height: 90%;
+        outline: rgb(206, 238, 45, .8) solid 3px;
+        background: linear-gradient(50deg, rgb(0, 0, 0, 1), 50%, rgb(0, 0, 0, .5));
+        
+      }
+
+      .card:hover
+      {
+        
+        transform: scale(1.1);
+        background-color: rgb(106, 120, 196);
+      }
+
+      .card-title
+      {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+      }
+
+      .card-text
+      {
+        color:aquamarine;
+      }
+
+      .card-text-btn
+      {
+        color: green !important;
+      }
+
+      .card-img-top
+      {
+        margin: 0;
+        padding: 0;
+        height: 40%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+      }
+
+    </style>
+</head>
+
+<!--todo, only trigger this on media at -->
+<body>
+  
+    <div id = "header"></div>
+    <!--section 1-->
+    <section class = "banner-1">
+
+      
+    <!--First Part of Body, Banner 1-->
+      <div id = "frontPageSwiper">
+        
+        <div class="navBarPadding"></div>
+
+        <div class = "introText">
+          Travel<span class = font-weight-bold>More</span> - Start Your Adventure <span class="font-weight-bold">Today</span>
+        </div>
+
+          <!-- Slider main container -->
+          <div class="swiper" >
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class = "swiper-information">
+                  <h1>The best travel booking agency</h1>
+                  <h5>Weather you're planning a trip to a city</h5> <!--readme, can use span to highlight some words if wanted-->
+                </div>
+                <div class = "learn-more-button">
+                  <a href = #banner-2-location class="btn btn-outline-success btn-block" role = "button">
+                    <h1 class="border-box-button-intro">learn more</h1>
+                  </a>  
+                </div>
+                <div class = "start-your-adventure-button">
+                  <a href = "Login.html" class="btn btn-outline-success btn-block" role = "button">
+                    <h1 class="border-box-button-intro">Start your Journey Here</h1>
+                  </a>
+                </div>
+                <img src="Images/architecture-1868667.jpg" alt = "travelImage" class = "sizeImage">
+              </div>
+
+              <div class="swiper-slide">
+                <div class = "swiper-information">
+                  <h1>Easy Flight and Hotel Bookings</h1>
+                  <h5>some random stuff cool</h5> <!--readme, can use span to highlight some words if wanted-->
+                </div>
+                <div class = "learn-more-button">
+                  <a href = #banner-2-location class="btn btn-outline-success btn-block" role = "button">
+                    <h1 class="border-box-button-intro">learn more</h1>
+                  </a>  
+                </div>
+                <div class = "start-your-adventure-button">
+                  <a href = "Login.html" class="btn btn-outline-success btn-block" role = "button">
+                    <h1 class="border-box-button-intro">Start your Journey Here</h1>
+                  </a>
+                </div>
+
+                <img src="Images/maldives-1993704.jpg" alt = "travelImage" class = "sizeImage">slide 1
+              </div>
+
+              <div class="swiper-slide">
+                <div class = "swiper-information">
+                  <h1>Compare Different Companies for the Best Price</h1>
+                  <h5>some random stuff cool</h5> <!--readme, can use span to highlight some words if wanted-->
+                </div>
+                <div class = "learn-more-button">
+                  <a href = #banner-2-location class="btn btn-outline-success btn-block" role = "button">
+                    <h1 class="border-box-button-intro">learn more</h1>
+                  </a>  
+                </div>
+                <div class = "start-your-adventure-button">
+                  <a href = "Login.html" class="btn btn-outline-success btn-block" role = "button">
+                    <h1 class="border-box-button-intro">Start your Journey Here</h1>
+                  </a>
+                </div>
+
+                <img src="Images/aurora-1197753.jpg" alt = "travelImage" class = "sizeImage">
+              </div>
+
+              <div class="swiper-slide">
+                <div class = "swiper-information">
+                  <h1>Plan a Solo Vacation or a Group One</h1>
+                  <h5>some random stuff cool</h5> <!--readme, can use span to highlight some words if wanted-->
+                </div>
+                <div class = "learn-more-button">
+                  <a href = #banner-2-location class="btn btn-outline-success btn-block" role = "button">
+                    <h1 class="border-box-button-intro">learn more</h1>
+                  </a>  
+                </div>
+                <div class = "start-your-adventure-button">
+                  <a href = "Login.html" class="btn btn-outline-success btn-block" role = "button">
+                    <h1 class="border-box-button-intro">Start your Journey Here</h1>
+                  </a>
+                </div>
+
+                <img src="Images/dune-1748462.jpg" alt = "travelImage" class = "sizeImage">
+                slide 1
+              </div>
+
+              <div class="swiper-slide">
+                <div class = "swiper-information">
+                  <h1>Exclusive Deals and Partnerships with Resorts</h1>
+                  <h5>some random stuff cool</h5> <!--readme, can use span to highlight some words if wanted-->
+                </div>
+                <div class = "learn-more-button">
+                  <a href = #banner-2-location class="btn btn-outline-success btn-block" role = "button">
+                    <h1 class="border-box-button-intro">learn more</h1>
+                  </a>  
+                </div>
+                <div class = "start-your-adventure-button">
+                  <a href = "Login.html" class="btn btn-outline-success btn-block" role = "button">
+                    <h1 class="border-box-button-intro">Start your Journey Here</h1>
+                  </a>
+                </div>
+
+                <img src="Images/hd-wallpaper-3719233.jpg" alt = "travelImage" class = "sizeImage">
+                slide 1
+              </div>
+
+              <div class="swiper-slide">
+                <div class = "swiper-information">
+                  <h1>All at the Convienent Touch of Your Fingertips</h1>                  
+                  <h5>some random stuff cool</h5> <!--readme, can use span to highlight some words if wanted-->
+                </div>
+                <div class = "learn-more-button">
+                  <a href = #banner-2-location class="btn btn-outline-success btn-block" role = "button">
+                    <h1 class="border-box-button-intro">learn more</h1>
+                  </a>  
+                </div>
+                <div class = "start-your-adventure-button">
+                  <a href = "Login.html" class="btn btn-outline-success btn-block" role = "button">
+                    <h1 class="border-box-button-intro">Start your Journey Here</h1>
+                  </a>
+                </div>
+
+                <img src="Images/houses-4093227.jpg" alt = "travelImage" class = "sizeImage">
+                slide 1
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+    </section>
+    
+    <section class = "banner-2 container-md" id = "banner-2-location">
+      <div class = "title-section-2">
+        <h1 >
+          Why Choose Travel<span style="font-weight: bold;">More</span>?
+        </h1>
+      </div>
+      <div class = "description-container d-flex justify-content-center d-flex align-items-stretch" >
+        
+
+        <div class="card m-4 p-2">
+          <img class="card-img-top" src="Images/dubai-1767540.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Traveling Convience</h5>
+            <p class="card-text">
+              Todo 
+            </p>
+            <br>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+
+        <div class="card m-4 p-2">
+          <img class="card-img-top" src="Images/architecture-3095716.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Exclusive Deals</h5>
+            <p class="card-text">
+              Todo 
+            </p>
+            <br>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+        
+        <div class="card m-4 p-2">
+          <img class="card-img-top" src="Images/clouds-2517653.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Compare Prices</h5>
+            <p class="card-text">
+              Todo 
+            </p>
+            <br>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+
+        <div class="card m-4 p-2">
+          <img class="card-img-top" src="Images/rome-5074421.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Traveling Alternatives</h5>
+            <p class="card-text">
+              Todo 
+            </p>
+            <br>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+
+        <div class="card m-4 p-2">
+          <img class="card-img-top" src="Images/jungle-1807476.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Emergency Prevention</h5>
+            <p class="card-text">
+              Todo 
+            </p>
+            <br>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+      
+    </section>
+
+    
+
+    <div id = "footer"></div>
+  <!--todo move to js-->
+  <script>
+    const swiper = new Swiper('#frontPageSwiper .swiper', {
+      
+      loop: true,
+      navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+    });
+  </script>
+
+</body>
+
+
+
+
+
+</html>
