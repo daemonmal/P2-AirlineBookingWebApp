@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+
+    <script> 
+        $(document).ready(function(){ 
+            $(function(){
+                $("#footer").load("footer.html"); 
+                $("#header").load("header.html"); 
+            });
+        })
+    </script>
+
+</head>
+<body>
+    <div id = "header"></div>
+
+    <div style="height: 6vh;"></div>
+    
+    <section class="h-100 gradient-custom-2">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-9 col-xl-8">
+              <div class="card">
+                <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+                  <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                    <img src="Images/user-solid.svg"
+                      alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                      style="width: 150px; z-index: 1">
+                    <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
+                      style="z-index: 1;">
+                      Edit profile
+                    </button>
+                  </div>
+                  <div class="ms-3" style="margin-top: 130px;">
+                    <h5>Customer Name</h5>
+                  </div>
+                </div>
+                <div class="p-4 text-black" style="background-color: #f8f9fa;">
+                  <div class="d-flex justify-content-end text-center py-1">
+                    <div>
+                      <p class="mb-1 h5">0</p>
+                      <p class="small text-muted mb-0">Planned Flights</p>
+                    </div>
+                    <div class="px-3">
+                      <p class="mb-1 h5">0</p>
+                      <p class="small text-muted mb-0">Car Rentals</p>
+                    </div>
+                    <div>
+                      <p class="mb-1 h5">0</p>
+                      <p class="small text-muted mb-0">Hotel Rentals</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-body p-4 text-black">
+                    <div class="mb-5">
+                      <p class="lead fw-normal mb-1">Booked Flights</p>
+                      <div class="p-4" style="background-color: #f8f9fa;">
+                        
+                      </div>
+                    </div>
+                </div>  
+
+                <div class="card-body p-4 text-black">
+                    <div class="mb-5">
+                      <p class="lead fw-normal mb-1">Booked Cars</p>
+                      <div class="p-4" style="background-color: #f8f9fa;">
+                        
+                      </div>
+                    </div>
+                </div>  
+
+
+                <div class="card-body p-4 text-black">
+                    <div class="mb-5">
+                      <p class="lead fw-normal mb-1">Hotel Rentals</p>
+                      <div class="p-4" style="background-color: #f8f9fa;">
+                        
+                      </div>
+                    </div>
+                </div>  
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+             <!--</div>-->
+
+        
+    <div id = "footer"></div>
+
+
+</body>
+</html>
