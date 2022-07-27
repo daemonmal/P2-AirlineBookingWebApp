@@ -21,5 +21,7 @@ namespace P2_TravelBookingAppAPI.Controllers
             }
             return await _context.Cars.ToListAsync();
         }
+
+        // GET by carId, AgencyId, model, and price
     }
 }

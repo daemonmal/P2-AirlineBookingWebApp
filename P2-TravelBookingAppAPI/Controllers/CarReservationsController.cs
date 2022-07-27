@@ -36,6 +36,8 @@ namespace P2_TravelBookingAppAPI.Controllers
             }
             var carReservation = await _context.CarReservations.FindAsync(id);
 
+            // add query for customer name associated with reservation ID
+
             if (carReservation == null)
             {
                 return NotFound();

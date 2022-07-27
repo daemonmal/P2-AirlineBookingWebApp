@@ -20,5 +20,7 @@ namespace P2_TravelBookingAppAPI.Controllers
             }
             return await _context.Hotels.ToListAsync();
         }
+
+        // GET by hotelId, name, city
     }
 }

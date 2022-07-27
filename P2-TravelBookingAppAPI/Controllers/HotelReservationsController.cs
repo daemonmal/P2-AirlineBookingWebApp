@@ -36,6 +36,8 @@ namespace P2_TravelBookingAppAPI.Controllers
             }
             var hotelReservation = await _context.HotelReservations.FindAsync(id);
 
+            // add query for customer name associated with reservation ID
+
             if (hotelReservation == null)
             {
                 return NotFound();

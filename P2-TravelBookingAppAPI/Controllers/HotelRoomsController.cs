@@ -21,5 +21,7 @@ namespace P2_TravelBookingAppAPI.Controllers
             }
             return await _context.HotelRooms.ToListAsync();
         }
+
+        // GET by roomId, hotelId, Price, and room numb
     }
 }
