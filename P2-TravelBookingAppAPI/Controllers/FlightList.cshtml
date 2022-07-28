@@ -1,0 +1,40 @@
+<script> 
+
+	function getFlights()
+	{
+        console.log('Call Started');
+
+		fetch('https://localhost:7168/api/Flights').then(res => res.json())
+													 .then(result => {
+                                                         console.log('inside try');
+                                                         console.log(result);
+
+                                                         for (i = 0; i < result.length; i++) 
+														 {
+															 $("table").append("<tr>" + 
+
+															 "<td>" + result[i].flightId + "</td>" + 
+															 "<td>" + result[i].fromCity + "</td>" + 
+															 "<td>" + result[i].toCity + "</td>" + 
+															 "<td>" + result[i].takeoff + "</td>" + 
+															 "<td>" + result[i].landingtime + "</td>" +
+															 "<td>" + result[i].price + "</td>" +
+															 
+															 + "</tr>")
+
+														 }
+
+
+													 })
+													 .catch(err =>{
+                                                         console.log(err);
+													 })
+	}
+</script>
+
+<button class="btn btn-primary" onclick="getFlights()"> Get Flights
+</button>
+
+<table class = "table">
+
+</table>
