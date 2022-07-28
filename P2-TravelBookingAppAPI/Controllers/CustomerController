@@ -1,0 +1,12 @@
+using Microsoft.AspNetCore.Mvc;
+
+namespace airlineMVC.Controllers
+{
+    public class CustomerController : Controller
+    {
+        public IActionResult CustomerList()
+        {
+            return View();
+        }
+    }
+}
