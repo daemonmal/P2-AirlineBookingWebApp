@@ -19,6 +19,8 @@
             $(function(){
                 $("#footer").load("footer.html"); 
                 $("#header").load("header.html"); 
+                Getflights();
+                DisplayObjects();
             });
         })
     </script>
@@ -29,14 +31,108 @@
 </style>
 
     <script>
-        var x = document.getElementById("selection-plane-type");
-        var i = x.selectedIndex;
-        var y = x.options[i].text;
+        
+        class Getflights {
+    constructor(flightId, fromCity, toCity, takeoff, landingtime, price) {
+        this.flightId = flightId;
+        this.fromCity = fromCity;
+        this.toCity = toCity;
+        this.takeoff = takeoff;
+        this.landingtime = landingtime;
+        this.price = price;
+
+    }
+} 
+var array = [];
+
+    function GetFlights()
+    {
+        console.log('Call Started');
+
+        fetch('https://localhost:7079/api/Flights').then(res => res.json())
+                                                    .then(result => {
+                                                        console.log('inside try');
+                                                        console.log(result);
+                                                        for (i = 0; i < result.length; i++) {
+                                                            var testingcar = new GetFlights(
+                                                                result[i].flightId, result[i].fromCity, result[i].toCity, result[i].takeoff, result[i].landingtime, result[i].price);
+                                                            
+                                                            array.push(testingcar);
+                                                        }
+                                                        
+                                                        
+                                                        for(i=0;i<result.length;i++)
+                                                        {
+                                                            $("table").append("<tr>" + 
+                                                        
+                                                            "<td>" + array[i].flightId + "</td>" +
+                                                            "<td>" + array[i].fromCity+ "</td>" +
+                                                            "<td>" + array[i].toCity + "</td>" +
+                                                            "<td>" + array[i].takeoff + "</td>" +
+                                                            "<td>" + array[i].landingtime + "</td>" +
+                                                            "<td>" + array[i].price + "</td>" +
+                                   
+                                                        
+                                                        + "</tr>")
+                                                        }
+
+                                                                    
+                                                    })
+                                                    .catch(err => {
+                                                        console.log(err);
+                                                    })
+    }
+
+        function DisplayObjects() {
+            for(var i = 0; i < array.length; i++)
+            {
+                var element = document.getElementById("big-box-middle");
+
+                var div = document.createElement('div');
+                div.className = 'card mb-5 class-unique-style';
+
+
+                var div2 = document.createElement('div');
+                div2.className = "card-body p-4";
+                div.appendChild(div2);
+
+                var h3 = document.createElement("h3");
+                h3.innerHTML = "Flight Data";
+                h3.className = "mb-3";
+                div2.appendChild(h3);
+
+                var p1 = document.createElement("p");
+                p1.className = "small mb-0";
+                h3.appendChild(p1);
+
+                var span = document.createElement("span");
+                span.className = "mx-2";
+                span.innerHTML = "From City: " + array[i].fromCity + "\n" + "To City: " + array[i].toCity + "\n" + "Takeoff Time: " + array[i].checkIn
+                + "\n" +  "Landing Time: " + array[i].landingtime + "Price: " + array[i].price;
+                p1.appendChild(span);
+
+
+                div3 = document.createElement('div');
+                div3.className = "d-flex justify-content-start align-items-center";
+                div.appendChild(div3);
+
+                button1 = document.createElement('button');
+                button1.className = "btn btn-primary text-uppercase";
+                button1.innerHTML = "Book This Flight";
+                //button1.onclick = DisplayObjects();
+                
+                div3.appendChild(button1);
+
+                element.appendChild(div);
+            }
+        }
+
     </script>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+    
 
 * {
     padding: 0;
@@ -153,6 +249,12 @@ margin-top: 80px;
     width: 70%;
     background-color: azure;
     border-radius: 15px;
+    overflow: scroll;
+}
+
+.class-unique-style
+{
+    border-radius: 15px; height: 200px; width: 100%;
 }
     </style>
 </head>
@@ -225,23 +327,12 @@ margin-top: 80px;
 
     <section class = "part-2 " id ="part-2-collapse">
         
-        <div class = "big-box-1 ">
-            <div class="big-box-middle justify-content-center align-items-center">
+        <div class = "big-box-1" >
+            <div class="big-box-middle justify-content-center align-items-center" id = "big-box-middle">
 
-                <div class="card mb-5" style="border-radius: 15px; height: 200px; width: 100%;">
-                    <div class="card-body p-4">
-                      <h3 class="mb-3">Program Title</h3>
-                      <p class="small mb-0"> <span class="mx-2">|</span> whatever details of the flight  <span class="mx-2">|</span></p>
-                      <hr class="my-4">
-                      <div class="d-flex justify-content-start align-items-center">
-                        <p class="mb-0 text-uppercase"><i class="fas fa-cog me-2"></i> <span
-                            class="text-muted small">Book This Flight</span></p>
-                        <p class="mb-0 text-uppercase"><i class="fas fa-link ms-4 me-2"></i> <span
-                            class="text-muted small">Whatever</span></p>
 
-                      </div>
-                    </div>
-                  </div>
+
+                
 
             </div>  
         </div>

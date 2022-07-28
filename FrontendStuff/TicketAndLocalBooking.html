@@ -15,15 +15,105 @@
             $(function(){
                 $("#footer").load("footer.html"); 
                 $("#header").load("header.html"); 
+                GetCars();
+                DisplayObjects();
             });
         })
     </script>
 
 
-  <script>
-      var x = document.getElementById("selection-plane-type");
-      var i = x.selectedIndex;
-      var y = x.options[i].text;
+<script>
+  class Getcars {
+      constructor(carId, agencyId, carModel, carPrice) {
+          this.carId = carId;
+          this.agencyId = agencyId;
+          this.carModel = carModel;
+          this.carPrice = carPrice;
+  
+      }
+  } 
+
+  var array = [ ];
+
+  function Testing()
+  {
+    var testingcar = new Getcars(100, 100, "model", 100);
+    var testingcar2 = new Getcars(100, 100, "model2", 100);
+    array.push(testingcar);
+    array.push(testingcar2);
+  }
+  
+      function GetCars()
+      {
+          console.log('Call Started');
+  
+          fetch('https://localhost:7079/api/Cars').then(res => res.json())
+                                                      .then(result => {
+                                                          console.log('inside try');
+                                                          console.log(result);
+                                                          for (i = 0; i < result.length; i++) {
+                                                              var testingcar = new Getcars(
+                                                                  result[i].carId, result[i].agencyId, result[i].carModel, result[i].carPrice);
+                                                              
+                                                              array.push(testingcar);
+                                                          }
+             
+                                                      })
+                                                      .catch(err => {
+                                                          console.log(err);
+                                                      })
+      }
+  
+      function OverallFunction() {
+          GetCars();
+      }
+
+
+      function DisplayObjects() {
+
+          for(var i = 0; i < array.length; i++)
+          {
+            var element = document.getElementById("big-box-middle");
+
+            var div = document.createElement('div');
+            div.className = 'card mb-5 class-unique-style';
+
+
+            var div2 = document.createElement('div');
+            div2.className = "card-body p-4";
+            div.appendChild(div2);
+
+            var h3 = document.createElement("h3");
+            h3.innerHTML = "Rental Car Data";
+            h3.className = "mb-3";
+            div2.appendChild(h3);
+
+            var p1 = document.createElement("p");
+            p1.className = "small mb-0";
+            h3.appendChild(p1);
+
+            var span = document.createElement("span");
+            span.className = "mx-2";
+            span.innerHTML = "agency: " + array[i].agencyId + "\n" + "Car Model: " + array[i].carModel + "\n" + "Car Price: " + array[i].carPrice;
+            p1.appendChild(span);
+
+            div3 = document.createElement('div');
+            div3.className = "d-flex justify-content-start align-items-center";
+            div.appendChild(div3);
+
+            button1 = document.createElement('button');
+            button1.className = "btn btn-primary text-uppercase";
+            button1.innerHTML = "rent this car";
+            //button1.onclick = DisplayObjects();
+            
+            div3.appendChild(button1);
+
+            element.appendChild(div);
+          }
+        
+    }
+  
+  
   </script>
   
   <style>
@@ -52,6 +142,11 @@
         -webkit-background-size: cover;
         background-size: cover;
     }
+
+    .class-unique-style
+{
+    border-radius: 15px; height: 200px; width: 100%;
+}
   </style>
 
 </head>
@@ -123,14 +218,13 @@
         </section>
   </section>
 
-  <section class = "part-2 collapse " id = "part-2-collapse">
-    <div class = "big-box-1 d-flex ">
-        <div class="big-box-middle d-flex justify-content-center d-flex align-items-center">
-            <div>
-                
-            </div>
-        </div>  
-    </div>
+  <section class = "part-2 " id = "part-2-collapse">
+    <div class = "big-box-1" >
+      <div class="big-box-middle justify-content-center align-items-center" id = "big-box-middle">
+
+
+      </div>  
+  </div>
     
 </section>
 

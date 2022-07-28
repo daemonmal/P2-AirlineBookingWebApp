@@ -17,16 +17,122 @@
             $(function(){
                 $("#footer").load("footer.html"); 
                 $("#header").load("header.html"); 
+                GetHReservations();
+                DisplayObjects();
             });
         })
     </script>
 
-
+    
 
     <script>
+
+class GethotelReservations {
+    constructor(reservationId, hotelId, roomId, checkIn, checkOut) {
+        this.reservationId = reservationId;
+        this.hotelId = hotelId;
+        this.roomId = roomId;
+        this.checkIn = checkIn;
+        this.checkOut = checkOut;
+    }
+} 
+var array = [];
+    function GetHReservations()
+    {
+        console.log('Call Started');
+
+        fetch('https://localhost:7079/api/HotelReservations').then(res => res.json())
+                                                    .then(result => {
+                                                        console.log('inside try');
+                                                        console.log(result);
+                                                         for (i = 0; i < result.length; i++) {
+                                                            var testingcar = new GethotelReservations(
+                                                                result[i].reservationId, result[i].hotelId, result[i].roomId, result[i].checkIn, result[i].checkOut);
+                                                            
+                                                            array.push(testingcar);
+                                                        }
+
+                                                        for(i=0;i<result.length;i++)
+                                                        {
+                                                            $("table").append("<tr>" + 
+                                                        
+                                                            "<td>" + array[i].reservationId + "</td>" +
+                                                            "<td>" + array[i].hotelId + "</td>" +
+                                                            "<td>" + array[i].roomId + "</td>" +
+                                                            "<td>" + array[i].checkIn + "</td>" +
+                                                            "<td>" + array[i].checkOut + "</td>" +
+
+                                                        
+                                                        
+                                                        + "</tr>")
+                                                        }
+
+                                                        
+                                                                    
+                                                    })
+                                                    .catch(err => {
+                                                        console.log(err);
+                                                    })
+    }
+
+
+
         var x = document.getElementById("selection-plane-type");
         var i = x.selectedIndex;
         var y = x.options[i].text;
+
+        function Testing()
+    {
+        var testingcar = new GethotelReservations(100, 100, 100, "model", 100);
+        var testingcar2 = new GethotelReservations(100, 100, 100, "model2", 100);
+        array.push(testingcar);
+        array.push(testingcar2);
+    }
+
+
+        function DisplayObjects() {
+            for(var i = 0; i < array.length; i++)
+            {
+                var element = document.getElementById("big-box-middle");
+
+                var div = document.createElement('div');
+                div.className = 'card mb-5 class-unique-style';
+
+
+                var div2 = document.createElement('div');
+                div2.className = "card-body p-4";
+                div.appendChild(div2);
+
+                var h3 = document.createElement("h3");
+                h3.innerHTML = "Hotel Room Data";
+                h3.className = "mb-3";
+                div2.appendChild(h3);
+
+                var p1 = document.createElement("p");
+                p1.className = "small mb-0";
+                h3.appendChild(p1);
+
+                var span = document.createElement("span");
+                span.className = "mx-2";
+                span.innerHTML = "Hotel Id: " + array[i].hotelId + "\n" + "Hotel Room: " + array[i].roomId + "\n" + "Check in time: " + array[i].checkIn +"\n"
+                +  "Check out time: " + "\n"+ array[i].checkOut;
+                p1.appendChild(span);
+
+
+                div3 = document.createElement('div');
+                div3.className = "d-flex justify-content-start align-items-center";
+                div.appendChild(div3);
+
+                button1 = document.createElement('button');
+                button1.className = "btn btn-primary text-uppercase";
+                button1.innerHTML = "rent this car";
+                //button1.onclick = DisplayObjects();
+                
+                div3.appendChild(button1);
+
+                element.appendChild(div);
+            }
+        }
     </script>
 
     <style>
@@ -43,6 +149,11 @@
             background-color: azure;
             border-radius: 15px;
         }
+
+        .class-unique-style
+{
+    border-radius: 15px; height: 200px; width: 100%;
+}
     </style>
     
 </head>
@@ -102,11 +213,13 @@
 
 
     <section class="banner-2 collapse" id = "part-2-collapse">
-        <div class = "big-box-1 d-flex justify-content-center d-flex align-items-center">
-            <div class="big-box-middle d-flex justify-content-center d-flex align-items-center">
-                <div>
-                    
-                </div>
+        <div class = "big-box-1" >
+            <div class="big-box-middle justify-content-center align-items-center" id = "big-box-middle">
+
+
+
+                
+
             </div>  
         </div>
     </section>
